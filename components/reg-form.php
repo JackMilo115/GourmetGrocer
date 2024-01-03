@@ -27,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $args = ['firstname' => $fname['value'],
              'lastname' => $sname['value'],
              'email' => $email['value'],
-             'password' => password_hash($password['value'], PASSWORD_DEFAULT)];
+             'password' => password_hash($password['value'], PASSWORD_DEFAULT),
+             'role_id' => 1];
 
     // Register the member
     $member = $controllers->members()->register_member($args);

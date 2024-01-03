@@ -1,6 +1,5 @@
 <?php
 // Start the session to maintain user state
-session_start();
 // Clear all session variables
 session_unset(); 
 
@@ -35,13 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
      } else {
          // Set user session data on successful login
          $_SESSION['user'] = $member;
-
-         // Redirect based on user type
-         if ($member['user_type'] === 'admin') {
-          redirect('.\Inventory.php'); // Redirect admin users
-      } else {
-          redirect('member'); // Redirect non-admin users
-      }
+          redirect('member'); // Redirect users
       }
 
     }

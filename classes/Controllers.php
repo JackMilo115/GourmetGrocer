@@ -1,5 +1,4 @@
 <?php
-
 class Controllers {
 
     // Properties to hold database, members, and equipment instances
@@ -60,7 +59,7 @@ class Controllers {
     {
         // Check if roles controller is null, if so, create a new instance
         if ($this->roles === null) {
-            $this->roles = new RolesController($this->db);
+            $this->roles = new RoleController($this->db);
         }
         return $this->roles;
     }

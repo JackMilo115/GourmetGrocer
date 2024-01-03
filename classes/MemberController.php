@@ -22,6 +22,14 @@ class MemberController {
         // Execute the query and return the fetched member record
         return $this->db->runSQL($sql, $args)->fetch();
     }
+    public function get_role_by_id(int $id)
+    {
+        // SQL query to select a member's role by its ID
+        $sql = "SELECT role_id FROM users WHERE id = :id";
+        $args = ['id' => $id];
+        // Execute the query and return the fetched member's role
+        return $this->db->runSQL($sql, $args)->fetch();
+    }
 
     // Method to retrieve a member record by email
     public function get_member_by_email(string $email)
@@ -66,8 +74,8 @@ class MemberController {
     {
         try {
             // SQL query to insert a new member record
-            $sql = "INSERT INTO users(firstname, lastname, email, password) 
-                    VALUES (:firstname, :lastname, :email, :password)"; 
+            $sql = "INSERT INTO users(firstname, lastname, email, password, role_id) 
+                    VALUES (:firstname, :lastname, :email, :password, :role_id)"; 
 
             // Execute the query with the provided member data
             $this->db->runSQL($sql, $member)->execute();
