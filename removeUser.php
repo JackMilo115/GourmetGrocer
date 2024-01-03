@@ -1,7 +1,7 @@
-<?php $title = 'Remove User Page'; require __DIR__ . "/inc/header.php"; ?>
-     
 <?php
-    print_r($_SESSION['user']);
-?>
+    require_once 'inc/functions.php';
 
-<?php require __DIR__ . "/inc/footer.php"; ?>
+    $controllers->members()->delete_member($_GET['id']);
+
+    redirect('AdminPortal');
+?>
