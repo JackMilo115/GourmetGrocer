@@ -34,6 +34,17 @@
             return $this->db->runSQL($sql, $args)->fetch();
         }
 
+        // Function to retrieve a specific role by its ID
+        public function get_rolename_by_id(int $id)
+        {
+            // SQL query to select role data by ID
+            $sql = "SELECT name FROM roles WHERE id = :id";
+            $args = ['id' => $id];
+            
+            // Execute the query and return the result
+            return $this->db->runSQL($sql, $args)->fetch();
+        }
+
         // Function to retrieve all role entries from the database
         public function get_all_roles()
         {

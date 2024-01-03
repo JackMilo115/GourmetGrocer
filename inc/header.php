@@ -36,11 +36,12 @@
             <a class="nav-link" href="./login.php">Login</a>
           </li>
           <?php
-            if ($controllers->members()->get_role_by_id($_SESSION['user']['ID'])['role_id'] == 2): ?>
+          if (isset($_SESSION['user'])):
+            if ($controllers->members()->get_role_by_id($_SESSION['user']['id'])['role_id'] == 2): ?>
           <li class="nav-item active">
             <a class="nav-link" href="./AdminPortal.php">Admin Portal</a>
           </li>
-          <?php endif;?>
+          <?php endif; endif;?>
         </ul>
       </div>
     </nav>

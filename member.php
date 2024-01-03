@@ -13,7 +13,7 @@
 
 <?php
     print_r($_SESSION['user']);
-    print_r($controllers->members()->get_role_by_id($_SESSION['user']['ID']));
+    print_r($controllers->members()->get_role_by_id($_SESSION['user']['id']));
 ?>
 
 <?php require __DIR__ . "/inc/footer.php"; ?>
