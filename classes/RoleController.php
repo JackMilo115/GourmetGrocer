@@ -62,7 +62,7 @@
             $sql = "UPDATE equipments SET name = :name WHERE id = :id";
             
             // Execute the update query with the provided role data
-            return $this->db->runSQL($sql, $equipment)->execute();
+            return $this->db->runSQL($sql, $equipment);
         }
 
         // Function to delete a specific role entry by its ID
@@ -73,7 +73,7 @@
             $args = ['id' => $id];
             
             // Execute the delete query
-            return $this->db->runSQL($sql, $args)->execute();
+            return $this->db->runSQL($sql, $args);
         }
     }
 ?>

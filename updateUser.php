@@ -1,5 +1,7 @@
 <?php
-    require_once 'inc/functions.php';
+    $title = 'Update User';
+    require __DIR__ . "/inc/header.php";
+
 
     if (isset($_SESSION['user']))
     {
@@ -8,8 +10,9 @@
             redirect('login', ["error" => "You need to be an admin to view this page"]);
         }
     }
-    
-    $controllers->members()->delete_member($_GET['id']);
 
-    redirect('AdminPortal');
+    require __DIR__ . "/components/update-user-form.php";
+
+
+    require __DIR__ . "/inc/footer.php";
 ?>
