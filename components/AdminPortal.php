@@ -28,7 +28,7 @@
                             <!-- Display all roles -->
                             <td><?= htmlspecialchars($role['name']) ?></td> 
                             <!-- Button to remove role -->
-                            <td><a href="removeUser.php" class="btn btn-info" role="button">Remove</a></td>
+                            <td><a href="removeRole.php?id=<?php echo $role['id']?>" class="btn btn-info" role="button">Remove</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -51,7 +51,7 @@
                     <?php foreach ($members as $member): ?> <!-- Loop through each member item -->
                         <tr>
                             <!-- Display all member ids -->
-                            <td><?= htmlspecialchars($member['id']) ?></td> 
+                            <td><?= htmlspecialchars($member['ID']) ?></td> 
                             <!-- Display all member firstnames -->
                             <td><?= htmlspecialchars($member['firstname']) ?></td> 
                             <!-- Display all member lastnames -->
@@ -61,9 +61,9 @@
                             <!-- Display all member roles -->
                             <td><?= htmlspecialchars($controllers->roles()->get_rolename_by_id($member['role_id'])['name']) ?></td>
                             <!-- Button to remove user -->
-                            <td><a href="removeUser.php?id=<?php echo $member['id']?>" class="btn btn-info" role="button">Remove</a></td>
+                            <td><a href="removeUser.php?id=<?php echo $member['ID']?>" class="btn btn-info" role="button">Remove</a></td>
                             <!-- Button to update user -->
-                            <td><a href="updateUser.php?id=<?php echo $member['id']?>" class="btn btn-info" role="button">Update</a></td>
+                            <td><a href="updateUser.php?id=<?php echo $member['ID']?>" class="btn btn-info" role="button">Update</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -87,6 +87,8 @@
                             <td><?= htmlspecialchars($equipment['name']) ?></td> 
                             <!-- Display all member lastnames -->
                             <td><?= htmlspecialchars($equipment['description']) ?></td> 
+                            <!-- Button to remove equipment -->
+                            <td><a href="removeEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Remove</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
