@@ -1,5 +1,5 @@
 <?php
-    $title = 'Admin Page';
+    $title = 'Admin Roles Page';
     require __DIR__ . "/inc/header.php";
 
 
@@ -12,7 +12,7 @@
     }
 
 
-    require __DIR__ . "/components/AdminPortal.php";
+    require __DIR__ . "/components/adminRoles.php";
 
     require __DIR__ . "/inc/footer.php";
-    ?>
+?>
