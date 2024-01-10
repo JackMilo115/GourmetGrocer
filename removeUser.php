@@ -1,5 +1,5 @@
 <?php
-    require_once 'inc/functions.php';
+    require_once './inc/functions.php';
 
     if (isset($_SESSION['user']))
     {
@@ -11,5 +11,5 @@
     
     $controllers->members()->delete_member($_GET['id']);
 
-    redirect('AdminPortal');
+    redirect('adminUsers');
 ?>
