@@ -10,9 +10,20 @@
             redirect('login', ["error" => "You need to be an admin to view this page"]);
         }
     }
+?>
 
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <?php require __DIR__ . "/components/adminUsers.php"; ?>
+        </div>
+        <div class="col">
+            <?php //require __DIR__ . "/components/update-user-form.php"; ?>
+        </div>
+    </div>
+</div>
 
-    require __DIR__ . "/components/adminUsers.php";
+<?php
 
     require __DIR__ . "/inc/footer.php";
 ?>

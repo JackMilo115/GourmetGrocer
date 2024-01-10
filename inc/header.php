@@ -32,10 +32,16 @@
           <li class="nav-item active">
             <a class="nav-link" href="./Inventory.php">Equipment</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./login.php">Login</a>
-          </li>
+          <?php if (isset($_SESSION['user'])): ?>
+            <li class="nav-item active">
+              <a class="nav-link" href="./login.php">Logout</a>
+            </li>
+          <?php else: ?>
+            <li class="nav-item active">
+              <a class="nav-link" href="./login.php">Login</a>
+            </li>
           <?php
+          endif;
           if (isset($_SESSION['user'])):
             if ($controllers->members()->get_role_by_id($_SESSION['user']['ID'])['role_id'] == 2): ?>
           <li class="nav-item active">

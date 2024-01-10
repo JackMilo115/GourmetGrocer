@@ -15,10 +15,12 @@
                  'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                  'role_id' => $_POST['role']];
 
-        $controllers->members()->update_member($args);
+        print_r($args);
+        print($_POST['id']);
 
-        redirect('AdminPortal');
-    } 
+        $controllers->members()->update_member($args, $_POST['id']);
+        redirect('adminUsers');
+    }
 
     $user = $controllers->members()->get_member_by_id($_GET['id']);
 ?>
@@ -58,14 +60,15 @@
                 <small class="text-danger"><?= htmlspecialchars($role['error'] ?? '') ?></small>
               </div>
 
+              <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($user['ID'] ?? '') ?>">
+
               <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Update</button>
 
               <?php if ($message): ?>
                 <div class="alert alert-danger mt-4">
                   <?= $message ?? '' ?>
                 </div>
-              <?php endif ?>
-
+              <?php endif; ?>
             </div>
           </div>
         </div>
