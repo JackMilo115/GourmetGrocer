@@ -1,8 +1,10 @@
 <?php
     require_once './inc/functions.php';
 
-    // Initialize variables for message, email, and password
+    // Initialize variables
     $message = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : '';
+    $firstname = null;
+    $secondname = null;
     $email = null;
     $password = null;
 
@@ -21,8 +23,10 @@
         // Set an error message if any input is invalid
         $message = !$valid ? "Please fix the above errors:" : '';
 
+        // Check if the inputs are valid
         if ($valid)
         {
+          // Compose the arguments into an args array
           $args = ['firstname' => $firstname['value'],
                    'lastname' => $lastname['value'],
                    'email' => $email['value'],
@@ -30,13 +34,17 @@
                    'role_id' => $_POST['role'],
                    'id' => $_POST['id']];
 
+          // Send the args to the database
           $controllers->members()->update_member($args);
+          // Redirect the user
           redirect('adminUsers');
         }
     }
 
+    // Check that the id has been passed in
     if (isset($_GET['id']))
     {
+      // Get data by passed id
       $user = $controllers->members()->get_member_by_id($_GET['id']);
     }
 ?>
