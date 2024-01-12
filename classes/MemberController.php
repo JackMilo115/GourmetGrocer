@@ -51,10 +51,10 @@ class MemberController {
     }
 
     // Method to update an existing member record
-    public function update_member(array $member, int $id)
+    public function update_member(array $member)
     {
         // SQL query to update a member's information
-        $sql = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email, password = :password, role_id = :role_id WHERE ID = $id";
+        $sql = "UPDATE users SET firstname = :firstname, lastname = :lastname, email = :email, password = :password, role_id = :role_id WHERE ID = :id";
         // Execute the query with the provided updated data
         return $this->db->runSQL($sql, $member);
     }

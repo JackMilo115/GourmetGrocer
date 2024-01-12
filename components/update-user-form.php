@@ -9,24 +9,40 @@
     // Check if the form is submitted via POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-        $args = ['firstname' => $_POST['fname'],
-                 'lastname' => $_POST['sname'],
-                 'email' => $_POST['email'],
-                 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                 'role_id' => $_POST['role']];
+        // Process the submitted form data
+        $firstname = InputProcessor::processString($_POST['fname']);
+        $lastname =  InputProcessor::processString($_POST['sname']);
+        $email =  InputProcessor::processEmail($_POST['email']);
+        $password =  InputProcessor::processPassword($_POST['password']);
 
-        print_r($args);
-        print($_POST['id']);
+        // Validate all inputs
+        $valid = $firstname['valid'] && $lastname['valid'] && $email['valid'] && $password['valid'];
 
-        $controllers->members()->update_member($args, $_POST['id']);
-        redirect('adminUsers');
+        // Set an error message if any input is invalid
+        $message = !$valid ? "Please fix the above errors:" : '';
+
+        if ($valid)
+        {
+          $args = ['firstname' => $firstname['value'],
+                   'lastname' => $lastname['value'],
+                   'email' => $email['value'],
+                   'password' => password_hash($password['value'], PASSWORD_DEFAULT),
+                   'role_id' => $_POST['role'],
+                   'id' => $_POST['id']];
+
+          $controllers->members()->update_member($args);
+          redirect('adminUsers');
+        }
     }
 
-    $user = $controllers->members()->get_member_by_id($_GET['id']);
+    if (isset($_GET['id']))
+    {
+      $user = $controllers->members()->get_member_by_id($_GET['id']);
+    }
 ?>
 
 <!-- HTML form for registration -->
-<form method="post" action=" <?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+<form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>?id=<?php echo $user['ID']?>">
   <section class="vh-100">
     <div class="container py-5 h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -37,12 +53,12 @@
               <h3 class="mb-2">Update User</h3>
               <div class="form-outline mb-4">
                 <input required type="text" id="fname" name="fname" class="form-control form-control-lg" placeholder="Firstname" value="<?= htmlspecialchars($user['firstname'] ?? '') ?>"/>
-                <small class="text-danger"><?= htmlspecialchars($fname['error'] ?? '') ?></small>
+                <small class="text-danger"><?= htmlspecialchars($firstname['error'] ?? '') ?></small>
               </div>
 
               <div class="form-outline mb-4">
                 <input required type="text" id="sname" name="sname" class="form-control form-control-lg" placeholder="Surname" value="<?= htmlspecialchars($user['lastname'] ?? '') ?>"/>
-                <small class="text-danger"><?= htmlspecialchars($sname['error'] ?? '') ?></small>
+                <small class="text-danger"><?= htmlspecialchars($lastname['error'] ?? '') ?></small>
               </div>
 
 
@@ -53,11 +69,12 @@
 
               <div class="form-outline mb-4">
                 <input required type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" />
+                <small class="text-danger"><?= htmlspecialchars($password['error'] ?? '') ?></small>
               </div>
 
               <div class="form-outline mb-4">
                 <input required type="number" id="role" name="role" class="form-control form-control-lg" placeholder="Role" value="<?= htmlspecialchars($user['role_id'] ?? '') ?>"/>
-                <small class="text-danger"><?= htmlspecialchars($role['error'] ?? '') ?></small>
+                <small class="text-danger"><?= htmlspecialchars($role_id['error'] ?? '') ?></small>
               </div>
 
               <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($user['ID'] ?? '') ?>">
