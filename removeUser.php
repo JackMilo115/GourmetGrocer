@@ -1,5 +1,5 @@
 <?php
-    require_once './inc/functions.php';
+    require_once 'inc/functions.php';
 
     if (isset($_SESSION['user']))
     {

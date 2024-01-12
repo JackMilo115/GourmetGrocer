@@ -30,7 +30,9 @@
                             <!-- Display all member lastnames -->
                             <td><?= htmlspecialchars($equipment['description']) ?></td> 
                             <!-- Button to remove equipment -->
-                            <td><a href="functions/removeEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Remove</a></td>
+                            <td><a href="removeEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Remove</a></td>
+                            <!-- Button to update equipment -->
+                            <td><a href="updateEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-danger" role="button">Update</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

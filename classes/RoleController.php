@@ -59,10 +59,10 @@
         public function update_role(array $role)
         {
             // SQL query to update role data
-            $sql = "UPDATE equipments SET name = :name WHERE id = :id";
+            $sql = "UPDATE roles SET name = :name WHERE id = :id";
             
             // Execute the update query with the provided role data
-            return $this->db->runSQL($sql, $equipment);
+            return $this->db->runSQL($sql, $role);
         }
 
         // Function to delete a specific role entry by its ID

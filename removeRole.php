@@ -11,5 +11,5 @@
     
     $controllers->roles()->delete_role($_GET['id']);
 
-    redirect('AdminPortal');
+    redirect('adminRoles');
 ?>

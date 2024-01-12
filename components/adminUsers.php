@@ -35,7 +35,7 @@
                 <!-- Button to remove user -->
                 <td><a href="removeUser.php?id=<?php echo $member['ID']?>" class="btn btn-info" role="button">Remove</a></td>
                 <!-- Button to update user -->
-                <td><a href="updateUser.php?id=<?php echo $member['ID']?>" class="btn btn-info" role="button">Update</a></td>
+                <td><a href="updateUser.php?id=<?php echo $member['ID']?>" class="btn btn-danger" role="button">Update</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

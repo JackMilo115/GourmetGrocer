@@ -16,6 +16,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +27,9 @@
                             <!-- Display all roles -->
                             <td><?= htmlspecialchars($role['name']) ?></td> 
                             <!-- Button to remove role -->
-                            <td><a href="functions/removeRole.php?id=<?php echo $role['id']?>" class="btn btn-info" role="button">Remove</a></td>
+                            <td><a href="removeRole.php?id=<?php echo $role['id']?>" class="btn btn-info" role="button">Remove</a></td>
+                            <!-- Button to update role -->
+                            <td><a href="updateRole.php?id=<?php echo $role['id']?>" class="btn btn-danger" role="button">Update</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
