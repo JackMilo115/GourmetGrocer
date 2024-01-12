@@ -26,10 +26,10 @@
                             <td><?= htmlspecialchars($role['id']) ?></td> 
                             <!-- Display all roles -->
                             <td><?= htmlspecialchars($role['name']) ?></td> 
-                            <!-- Button to remove role -->
-                            <td><a href="removeRole.php?id=<?php echo $role['id']?>" class="btn btn-info" role="button">Remove</a></td>
                             <!-- Button to update role -->
-                            <td><a href="updateRole.php?id=<?php echo $role['id']?>" class="btn btn-danger" role="button">Update</a></td>
+                            <td><a href="updateRole.php?id=<?php echo $role['id']?>" class="btn btn-info" role="button">Update</a></td>
+                            <!-- Button to remove role -->
+                            <td><a href="removeRole.php?id=<?php echo $role['id']?>" class="btn btn-danger" role="button">Remove</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
