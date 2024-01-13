@@ -17,6 +17,7 @@
                         <th>ID</th> 
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Image</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -29,7 +30,11 @@
                             <!-- Display all member firstnames -->
                             <td><?= htmlspecialchars($equipment['name']) ?></td> 
                             <!-- Display all member lastnames -->
-                            <td><?= htmlspecialchars($equipment['description']) ?></td> 
+                            <td><?= htmlspecialchars($equipment['description']) ?></td>
+                            <!-- Display all member lastnames -->
+                            <td><img src="<?= htmlspecialchars($equipment['image']) ?>"
+                             alt="Image of <?= htmlspecialchars($equipment['description']) ?>" 
+                             style="width: 100px; height: auto;"></td>
                             <!-- Button to update equipment -->
                             <td><a href="updateEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Update</a></td>
                             <!-- Button to remove equipment -->

@@ -46,7 +46,7 @@
 ?>
 
 <!-- HTML form for registration -->
-<form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>?id=<?php echo $user['ID']?>">
+<form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>?id=<?php echo $equipment['id']?>">
   <section class="vh-100">
     <div class="container py-5 h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -71,7 +71,7 @@
                 <small class="text-danger"><?= htmlspecialchars($email['error'] ?? '') ?></small>
               </div>
 
-              <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($user['ID'] ?? '') ?>">
+              <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($equipment['id'] ?? '') ?>">
 
               <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Update</button>
 
