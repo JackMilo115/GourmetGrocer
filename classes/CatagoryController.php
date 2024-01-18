@@ -35,7 +35,7 @@
         }
 
         // Function to retrieve all catagory entries from the database
-        public function get_all_catagory()
+        public function get_all_catagories()
         {
             // SQL query to select all role data
             $sql = "SELECT * FROM catagories";

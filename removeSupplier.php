@@ -9,7 +9,7 @@
         }
     }
     
-    $controllers->equipment()->delete_equipment($_GET['id']);
+    $controllers->suppliers()->delete_supplier($_GET['id']);
 
-    redirect('adminEquipment');
+    redirect('adminSuppliers');
 ?>

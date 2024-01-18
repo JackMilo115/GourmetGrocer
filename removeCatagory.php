@@ -9,7 +9,7 @@
         }
     }
     
-    $controllers->equipment()->delete_equipment($_GET['id']);
+    $controllers->catagories()->delete_catagory($_GET['id']);
 
-    redirect('adminEquipment');
+    redirect('adminCatagory');
 ?>

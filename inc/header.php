@@ -53,6 +53,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="./adminUsers.php">Admin Users</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./adminSuppliers.php">Admin Supplier</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./adminCatagory.php">Admin Catagory</a>
+          </li>
           <?php endif; endif;?>
         </ul>
       </div>
