@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
      } else {
          // Set user session data on successful login
          $_SESSION['user'] = $member;
-          redirect('member'); // Redirect users
+          redirect('index'); // Redirect users
       }
 
     }

@@ -10,9 +10,19 @@
             redirect('login', ["error" => "You need to be an admin to view this page"]);
         }
     }
+?>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <?php require __DIR__ . "/components/adminRoles.php"; ?>
+            </div>
+            <div class="col-6">
+                <?php require __DIR__ . "/components/add-role-form.php"; ?>
+            </div>
+        </div>
+    </div>
 
-    require __DIR__ . "/components/adminRoles.php";
-
+<?php
     require __DIR__ . "/inc/footer.php";
 ?>

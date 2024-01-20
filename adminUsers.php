@@ -18,7 +18,7 @@
             <?php require __DIR__ . "/components/adminUsers.php"; ?>
         </div>
         <div class="col">
-            <?php //require __DIR__ . "/components/update-user-form.php"; ?>
+            <?php require __DIR__ . "/components/add-user-form.php"; ?>
         </div>
     </div>
 </div>
