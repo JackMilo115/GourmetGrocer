@@ -38,9 +38,9 @@
                              alt="Image of <?= htmlspecialchars($equipment['description']) ?>" 
                              style="width: 100px; height: auto;"></td>
                              <!-- Display all member lastnames -->
-                            <td><?= htmlspecialchars($equipment['catagory_id']) ?></td>
+                            <td><?= htmlspecialchars($controllers->catagories()->get_catagory_by_id($equipment['catagory_id'])['name']) ?></td>
                             <!-- Display all member lastnames -->
-                            <td><?= htmlspecialchars($equipment['supplier_id']) ?></td>
+                            <td><?= htmlspecialchars($controllers->suppliers()->get_supplier_by_id($equipment['supplier_id'])['name']) ?></td>
                             <!-- Button to update equipment -->
                             <td><a href="updateEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Update</a></td>
                             <!-- Button to remove equipment -->
