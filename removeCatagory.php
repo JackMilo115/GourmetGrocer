@@ -8,6 +8,10 @@
             redirect('login', ["error" => "You need to be an admin to view this page"]);
         }
     }
+    else
+    {
+        redirect('login', ["error" => "You need to be an admin to view this page"]);
+    }
     
     $controllers->catagories()->delete_catagory($_GET['id']);
 

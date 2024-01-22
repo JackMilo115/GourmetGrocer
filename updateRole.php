@@ -10,6 +10,10 @@
             redirect('login', ["error" => "You need to be an admin to view this page"]);
         }
     }
+    else
+    {
+        redirect('login', ["error" => "You need to be an admin to view this page"]);
+    }
 
     require __DIR__ . "/components/update-role-form.php";
 
