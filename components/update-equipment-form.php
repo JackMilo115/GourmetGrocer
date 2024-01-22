@@ -28,6 +28,8 @@
           $args = ['name' => $name['value'],
                    'description' => $description['value'],
                    'image' => $image['value'],
+                   'catagory_id' => $_POST['catagory_id'],
+                   'supplier_id' => $_POST['supplier_id'],
                    'id' => $_POST['id']];
 
           // Send the args to the database
@@ -69,6 +71,16 @@
               <div class="form-outline mb-4">
                 <input required type="text" id="image" name="image" class="form-control form-control-lg" placeholder="image" value="<?= htmlspecialchars($equipment['image']?? '') ?>" />
                 <small class="text-danger"><?= htmlspecialchars($email['error'] ?? '') ?></small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input required type="number" id="catagory_id" name="catagory_id" class="form-control form-control-lg" placeholder="catagory_id" value="<?= htmlspecialchars($equipment['catagory_id']?? '') ?>" />
+                <small class="text-danger"><?= htmlspecialchars($catagory_id['error'] ?? '') ?></small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input required type="number" id="supplier_id" name="supplier_id" class="form-control form-control-lg" placeholder="supplier_id" value="<?= htmlspecialchars($equipment['supplier_id']?? '') ?>" />
+                <small class="text-danger"><?= htmlspecialchars($supplier_id['error'] ?? '') ?></small>
               </div>
 
               <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($equipment['id'] ?? '') ?>">

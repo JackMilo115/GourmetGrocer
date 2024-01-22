@@ -14,8 +14,8 @@ class equipmentController {
     public function create_equipment(array $equipment) 
     {
         // SQL query to insert new equipment data into the equipments table
-        $sql = "INSERT INTO equipments(name, description, image)
-        VALUES (:name, :description, :image);";
+        $sql = "INSERT INTO equipments(name, description, image, catagory_id, supplier_id)
+        VALUES (:name, :description, :image, :catagory_id, :supplier_id);";
         
         // Execute the SQL query with the provided equipment data
         $this->db->runSQL($sql, $equipment);
@@ -49,7 +49,7 @@ class equipmentController {
     public function update_equipment(array $equipment)
     {
         // SQL query to update equipment data
-        $sql = "UPDATE equipments SET name = :name, description = :description, image = :image WHERE id = :id";
+        $sql = "UPDATE equipments SET name = :name, description = :description, image = :image, catagory_id = :catagory_id, supplier_id = :supplier_id WHERE id = :id";
         
         // Execute the update query with the provided equipment data
         return $this->db->runSQL($sql, $equipment);

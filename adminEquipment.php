@@ -14,10 +14,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-8">
                 <?php require __DIR__ . "/components/adminEquipment.php"; ?>
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 <?php require __DIR__ . "/components/add-equipment-form.php"; ?>
             </div>
         </div>

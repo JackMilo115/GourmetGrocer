@@ -27,7 +27,9 @@
           // Compose the arguments into an args array
           $args = ['name' => $name['value'],
                    'description' => $description['value'],
-                   'image' => $image['value']];
+                   'image' => $image['value'],
+                   'catagory_id' => $_POST['catagory_id'],
+                   'supplier_id' => $_POST['supplier_id']];
 
           // Send the args to the database
           $controllers->equipment()->create_equipment($args);
@@ -61,6 +63,16 @@
               <div class="form-outline mb-4">
                 <input required type="text" id="image" name="image" class="form-control form-control-lg" placeholder="image" value="" />
                 <small class="text-danger"><?= htmlspecialchars($email['error'] ?? '') ?></small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input required type="number" id="catagory_id" name="catagory_id" class="form-control form-control-lg" placeholder="catagory_id" value="" />
+                <small class="text-danger"><?= htmlspecialchars($catagory_id['error'] ?? '') ?></small>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input required type="number" id="supplier_id" name="supplier_id" class="form-control form-control-lg" placeholder="supplier_id" value="" />
+                <small class="text-danger"><?= htmlspecialchars($supplier_id['error'] ?? '') ?></small>
               </div>
 
               <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add</button>

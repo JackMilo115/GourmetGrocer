@@ -18,6 +18,8 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Image</th>
+                        <th>Catagory</th>
+                        <th>Supplier</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -35,6 +37,10 @@
                             <td><img src="<?= htmlspecialchars($equipment['image']) ?>"
                              alt="Image of <?= htmlspecialchars($equipment['description']) ?>" 
                              style="width: 100px; height: auto;"></td>
+                             <!-- Display all member lastnames -->
+                            <td><?= htmlspecialchars($equipment['catagory_id']) ?></td>
+                            <!-- Display all member lastnames -->
+                            <td><?= htmlspecialchars($equipment['supplier_id']) ?></td>
                             <!-- Button to update equipment -->
                             <td><a href="updateEquipment.php?id=<?php echo $equipment['id']?>" class="btn btn-info" role="button">Update</a></td>
                             <!-- Button to remove equipment -->
