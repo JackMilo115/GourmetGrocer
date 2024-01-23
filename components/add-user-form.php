@@ -8,6 +8,8 @@
     $email = null;
     $password = null;
 
+    $roles = $controllers->roles()->get_all_roles();
+
     // Check if the form is submitted via POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
@@ -72,9 +74,12 @@
                 <small class="text-danger"><?= htmlspecialchars($password['error'] ?? '') ?></small>
               </div>
 
-              <div class="form-outline mb-4">
-                <input required type="number" id="role" name="role" class="form-control form-control-lg" placeholder="Role" value=""/>
-                <small class="text-danger"><?= htmlspecialchars($role_id['error'] ?? '') ?></small>
+              <div class="form-group">
+                <select class="form-control" id="role" name="role">
+                  <?php foreach ($roles as $role): ?> <!-- Loop through each role item -->
+                        <option value="<?= htmlspecialchars($role['id']) ?>"><?= htmlspecialchars($role['name']) ?></option> 
+                  <?php endforeach; ?>
+                </select>
               </div>
 
               <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add</button>

@@ -7,6 +7,9 @@
     $description = null;
     $image = null;
 
+    $catagories = $controllers->catagories()->get_all_catagories();
+    $suppliers = $controllers->suppliers()->get_all_suppliers();
+
     // Check if the form is submitted via POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
@@ -73,14 +76,20 @@
                 <small class="text-danger"><?= htmlspecialchars($email['error'] ?? '') ?></small>
               </div>
 
-              <div class="form-outline mb-4">
-                <input required type="number" id="catagory_id" name="catagory_id" class="form-control form-control-lg" placeholder="catagory_id" value="<?= htmlspecialchars($equipment['catagory_id']?? '') ?>" />
-                <small class="text-danger"><?= htmlspecialchars($catagory_id['error'] ?? '') ?></small>
+              <div class="form-group">
+                <select class="form-control" id="catagory_id" name="catagory_id">
+                  <?php foreach ($catagories as $catagory): ?> <!-- Loop through each catagory item -->
+                        <option value="<?= htmlspecialchars($catagory['id']) ?>"><?= htmlspecialchars($catagory['name']) ?></option> 
+                  <?php endforeach; ?>
+                </select>
               </div>
 
-              <div class="form-outline mb-4">
-                <input required type="number" id="supplier_id" name="supplier_id" class="form-control form-control-lg" placeholder="supplier_id" value="<?= htmlspecialchars($equipment['supplier_id']?? '') ?>" />
-                <small class="text-danger"><?= htmlspecialchars($supplier_id['error'] ?? '') ?></small>
+              <div class="form-group">
+                <select class="form-control" id="supplier_id" name="supplier_id">
+                  <?php foreach ($suppliers as $supplier): ?> <!-- Loop through each supplier item -->
+                        <option value="<?= htmlspecialchars($supplier['id']) ?>"><?= htmlspecialchars($supplier['name']) ?></option> 
+                  <?php endforeach; ?>
+                </select>
               </div>
 
               <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($equipment['id'] ?? '') ?>">
