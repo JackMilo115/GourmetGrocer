@@ -12,7 +12,7 @@
     }
     else
     {
-        redirect('login', ["error" => "You need to be an admin to view this page"]);
+        //redirect('login', ["error" => "You need to be an admin to view this page"]);
     }
 
     require __DIR__ . "/components/update-supplier-form.php";

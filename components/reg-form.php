@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 <small class="text-danger"><?= htmlspecialchars($password['error'] ?? '') ?></small>
               </div>
 
-              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Register</button>
+              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit" id="submit">Register</button>
               <a class="btn btn-secondary btn-lg w-100" type="submit" href="./login.php" >Already got an account?</a>
 
               <?php if ($message): ?>

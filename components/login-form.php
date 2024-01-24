@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         // Set error message if login failed
         $message = "User details are incorrect.";
      } else {
-         // Set user session data on successful login
-         $_SESSION['user'] = $member;
+          // Set user session data on successful login
+          $_SESSION['user'] = $member;
           redirect('index'); // Redirect users
       }
 
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 </div>
   
               <!-- Submit button -->
-              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Login</button>
+              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit" id="submit">Login</button>
               <!-- Link to registration page -->
               <a class="btn btn-secondary btn-lg w-100" type="submit" href="./register.php" >Not got an account?</a>
               
