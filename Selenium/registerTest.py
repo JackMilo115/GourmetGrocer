@@ -7,7 +7,7 @@ class TestRegistration(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.get("http://localhost/Gourmetgrocer/register.php")
 
-    def test_valid_registration(self):
+    def test_1_valid_registration(self):
         # Input Data
         firstname_input = self.driver.find_element(By.ID, "fname")
         lastname_input = self.driver.find_element(By.ID, "sname")
@@ -30,7 +30,7 @@ class TestRegistration(unittest.TestCase):
         success_element = self.driver.find_element(By.CLASS_NAME, "alert")
         self.assertTrue("Please login with your new account" in success_element.text)
 
-    def test_invalid_registration(self):
+    def test_2_invalid_registration(self):
         # Input Data
         firstname_input = self.driver.find_element(By.ID, "fname")
         lastname_input = self.driver.find_element(By.ID, "sname")

@@ -52,7 +52,7 @@
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
 
-              <h3 class="mb-2">Update User</h3>
+              <h3 class="mb-2">Add User</h3>
               <div class="form-outline mb-4">
                 <input required type="text" id="fname" name="fname" class="form-control form-control-lg" placeholder="Firstname" value=""/>
                 <small class="text-danger"><?= htmlspecialchars($firstname['error'] ?? '') ?></small>
@@ -82,7 +82,7 @@
                 </select>
               </div>
 
-              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add</button>
+              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit" id="submit">Add</button>
 
               <?php if ($message): ?>
                 <div class="alert alert-danger mt-4">

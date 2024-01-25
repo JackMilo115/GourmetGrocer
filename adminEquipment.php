@@ -18,10 +18,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
                 <?php require __DIR__ . "/components/adminEquipment.php"; ?>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12">
                 <?php require __DIR__ . "/components/add-equipment-form.php"; ?>
             </div>
         </div>

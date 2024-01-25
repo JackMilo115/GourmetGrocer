@@ -47,7 +47,7 @@
   <section class="vh-100">
     <div class="container py-5 h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col">
+        <div class="col ">
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
 
@@ -84,7 +84,7 @@
                 </select>
               </div>
 
-              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add</button>
+              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit" id="submit">Add</button>
 
               <?php if ($message): ?>
                 <div class="alert alert-danger mt-4">

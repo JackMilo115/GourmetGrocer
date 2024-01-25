@@ -7,7 +7,7 @@ class TestLogin(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.get("http://localhost/Gourmetgrocer/login.php")
 
-    def test_valid_login(self):
+    def test_1_valid_login(self):
         # Input Data
         email_input = self.driver.find_element(By.ID, "email")
         password_input = self.driver.find_element(By.ID, "password")
@@ -24,7 +24,7 @@ class TestLogin(unittest.TestCase):
         success_element = self.driver.find_element(By.TAG_NAME, "h1")
         self.assertTrue("Welcome John!" in success_element.text)
 
-    def test_invalid_login(self):
+    def test_2_invalid_login(self):
         # Input Data
         email_input = self.driver.find_element(By.ID, "email")
         password_input = self.driver.find_element(By.ID, "password")
