@@ -64,7 +64,7 @@
 
               <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($supplier['id'] ?? '') ?>">
 
-              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Update</button>
+              <button class="btn btn-primary btn-lg w-100 mb-4" type="submit" id="submit">Update</button>
 
               <?php if ($message): ?>
                 <div class="alert alert-danger mt-4">
